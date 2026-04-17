@@ -14,6 +14,7 @@ export type Project = {
   summary: string
   description: string
   thumbnail: string
+  thumbnailFit?: 'cover' | 'contain'
   techStack: string[]
   features: Feature[]
   screenshots: Screenshot[]
@@ -69,6 +70,7 @@ export const projects: Project[] = [
     description:
       'A production kiosk application deployed across Sushiro Hong Kong restaurant locations. Customers scan a barcode payment card, review their order with itemized plate pricing, choose from Octopus, Alipay HK, Visa, Mastercard, UnionPay, or Apple Pay, and complete checkout on a touchscreen kiosk. The system includes trilingual support (Traditional Chinese, English, Japanese), a hidden staff panel for operations, receipt reprinting, day-end settlement, system diagnostics, and a cloud-based admin portal for reporting, screen saver management, and coupon administration.',
     thumbnail: '/sushirohk-self-payment-kiosk/images/key-screens/002.png',
+    thumbnailFit: 'cover',
     techStack: ['React', 'Node.js', 'Azure', 'Octopus API', 'Global Payment', 'PM2'],
     features: [
       {
@@ -111,6 +113,7 @@ export const projects: Project[] = [
     description:
       'Food Label Translator is a full-stack web app for converting international food labels into Canadian-ready packaging content. Users can upload label photos for OCR extraction, enter nutrition data manually, translate product information into bilingual English and French output, generate CFIA-style Nutrition Facts Table previews, run compliance checks, and export label assets. The project combines a Next.js front end with a FastAPI backend, configurable AI-assisted translation and OCR flows, and server-side label rendering for production-oriented outputs.',
     thumbnail: '/food-label-translator/landing-page-full.png',
+    thumbnailFit: 'contain',
     techStack: ['Next.js', 'FastAPI', 'Python', 'OCR', 'SVG rendering'],
     features: [
       {
@@ -151,6 +154,7 @@ export const projects: Project[] = [
     description:
       'Trade Tools is a local trading review and classification app built around a React frontend and Flask backend. It combines a performance dashboard for synced trade history with two focused review workflows: one for classifying individual trades and another for tagging daily chart setups from saved intraday screenshots. The app reads local trading data, serves chart assets through a lightweight API, and gives a structured way to review P&L, trading patterns, and rule adherence across a personal trading journal.',
     thumbnail: '/trade-tools/dashboard-equity-fullpage.png',
+    thumbnailFit: 'cover',
     techStack: ['React', 'Vite', 'Flask', 'Python', 'Notion API'],
     features: [
       {
@@ -192,6 +196,7 @@ export const projects: Project[] = [
     description:
       'Tennis App is a full-stack tennis court booking system with separate user and admin workflows for reservations, balances, and booking oversight. The frontend uses Vue 3, Vite, PrimeVue, and Tailwind CSS, while the backend is built with NestJS, Prisma, and PostgreSQL with JWT-based role access. Users can add and review their own bookings through a calendar-driven dashboard, and admins can manage bookings, funding, and reporting from a dedicated dashboard. The repository also includes an MCP server for natural-language operations against the app.',
     thumbnail: '/tennis-app/03-user-calendar.png',
+    thumbnailFit: 'cover',
     techStack: ['Vue 3', 'Vite', 'PrimeVue', 'Tailwind CSS', 'NestJS', 'Prisma', 'PostgreSQL'],
     features: [
       {

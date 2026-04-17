@@ -6,6 +6,8 @@ function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const project = projects.find((p) => p.slug === slug)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const usesContainedThumbnail = project?.thumbnailFit === 'contain'
+  const projectAnchor = slug ? `/#project-${slug}` : '/#work'
 
   if (!project) {
     return (
@@ -33,7 +35,7 @@ function ProjectDetailPage() {
             JF Studio
           </Link>
           <Link
-            to="/#work"
+            to={projectAnchor}
             className="text-sm font-medium text-neutral-700 hover:text-neutral-900"
           >
             &larr; All projects
@@ -44,7 +46,7 @@ function ProjectDetailPage() {
       <main className="mx-auto max-w-6xl px-6 pt-28 pb-20 md:pt-36">
         {/* Back link */}
         <Link
-          to="/#work"
+          to={projectAnchor}
           className="mb-8 inline-flex items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-neutral-900"
         >
           <span>&larr;</span> Back to projects
@@ -76,11 +78,13 @@ function ProjectDetailPage() {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 shadow-soft">
+          <div className="min-h-[220px] overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 shadow-soft sm:min-h-[280px]">
             <img
               src={project.thumbnail}
               alt={`${project.name} overview`}
-              className="w-full object-cover object-top"
+              className={`h-full w-full ${
+                usesContainedThumbnail ? 'bg-white p-3 object-contain sm:p-4' : 'object-cover object-top'
+              }`}
             />
           </div>
         </div>
@@ -133,7 +137,7 @@ function ProjectDetailPage() {
                   <img
                     src={screenshot.src}
                     alt={screenshot.label}
-                    className="w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="h-[260px] w-full bg-white p-3 object-contain transition-transform duration-300 group-hover:scale-[1.02] sm:h-[320px] sm:p-4"
                     loading="lazy"
                   />
                 </div>

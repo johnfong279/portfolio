@@ -18,12 +18,19 @@ function Hero() {
           <Button href="#contact">{heroContent.ctaLabel}</Button>
           <p className="text-sm text-neutral-600">{heroContent.secondaryText}</p>
         </div>
+
+        <div className="mt-8 max-w-[260px] rounded-[1.5rem] border border-white/80 bg-white/90 px-5 py-4 shadow-soft sm:hidden">
+          <p className="text-xs uppercase tracking-[0.18em] text-neutral-600">Typical outcome</p>
+          <p className="mt-1 text-xl font-semibold text-neutral-900">
+            More qualified enquiries
+          </p>
+        </div>
       </div>
 
-      <div className="relative min-h-[120px] sm:min-h-[160px]">
-        <div className="relative ml-auto max-w-[260px] rounded-[1.5rem] border border-white/80 bg-white/90 px-5 py-4 shadow-soft sm:absolute sm:right-2 sm:bottom-0">
+      <div className="relative hidden min-h-[160px] sm:block">
+        <div className="absolute right-2 bottom-0 ml-auto max-w-[260px] rounded-[1.5rem] border border-white/80 bg-white/90 px-5 py-4 shadow-soft">
           <p className="text-xs uppercase tracking-[0.18em] text-neutral-600">Typical outcome</p>
-          <p className="mt-1 text-xl font-semibold text-neutral-900 sm:text-2xl">
+          <p className="mt-1 text-2xl font-semibold text-neutral-900">
             More qualified enquiries
           </p>
         </div>

@@ -7,18 +7,29 @@ type ProjectCardProps = {
 }
 
 function ProjectCard({ project, reverse = false }: ProjectCardProps) {
+  const usesContainedThumbnail = project.thumbnailFit === 'contain'
+  const projectAnchor = `project-${project.slug}`
+
   return (
-    <Link to={`/project/${project.slug}`} className="block no-underline">
+    <Link
+      id={projectAnchor}
+      to={`/project/${project.slug}`}
+      className="block scroll-mt-32 no-underline md:scroll-mt-40"
+    >
       <article
         className={`group grid items-center gap-10 rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-soft transition-shadow hover:shadow-[0_20px_60px_rgba(28,25,23,0.12)] md:grid-cols-2 md:p-8 ${
           reverse ? 'md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1' : ''
         }`}
       >
-        <div className="aspect-[16/11] min-h-[280px] w-full overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100">
+        <div className="min-h-[220px] w-full overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 sm:min-h-[260px] md:min-h-[280px]">
           <img
             src={project.thumbnail}
             alt={`${project.name} screenshot`}
-            className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+            className={`h-full w-full transition-transform duration-300 group-hover:scale-[1.02] ${
+              usesContainedThumbnail
+                ? 'bg-white p-3 object-contain sm:p-4'
+                : 'object-cover object-top'
+            }`}
           />
         </div>
 

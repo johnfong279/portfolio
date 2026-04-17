@@ -10,7 +10,7 @@ function TrustStrip() {
         {trustContent.logos.map((logo) => (
           <div
             key={logo}
-            className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-neutral-600"
+            className="flex min-h-[58px] items-center justify-center rounded-full border border-neutral-200 bg-neutral-50 px-4 py-3 text-center text-xs font-semibold uppercase leading-[1.35] tracking-[0.18em] text-neutral-600"
           >
             {logo}
           </div>
