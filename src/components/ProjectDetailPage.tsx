@@ -56,7 +56,7 @@ function ProjectDetailPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-accent-500">
               {project.name}
             </p>
-            <h1 className="mt-3 font-heading text-4xl leading-tight text-neutral-900 md:text-5xl">
+            <h1 className="mt-3 font-heading text-3xl leading-tight text-neutral-900 sm:text-4xl md:text-5xl">
               {project.summary}
             </h1>
 
@@ -91,7 +91,7 @@ function ProjectDetailPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-accent-500">
               What it does
             </p>
-            <h2 className="mt-3 font-heading text-4xl leading-tight text-neutral-900">
+            <h2 className="mt-3 font-heading text-3xl leading-tight text-neutral-900 sm:text-4xl">
               Key Features
             </h2>
           </div>
@@ -153,13 +153,13 @@ function ProjectDetailPage() {
           onClick={() => setLightboxIndex(null)}
         >
           <div
-            className="relative max-h-[90vh] max-w-[90vw]"
+            className="relative w-full max-w-[90vw] sm:w-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={project.screenshots[lightboxIndex].src}
               alt={project.screenshots[lightboxIndex].label}
-              className="max-h-[85vh] rounded-xl object-contain"
+              className="max-h-[72vh] w-full rounded-xl object-contain sm:max-h-[85vh] sm:w-auto"
             />
             <p className="mt-3 text-center text-sm font-medium text-white/90">
               {project.screenshots[lightboxIndex].label}
@@ -169,28 +169,49 @@ function ProjectDetailPage() {
             <button
               type="button"
               onClick={() => setLightboxIndex(null)}
-              className="absolute -top-3 -right-3 flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg font-bold text-neutral-900 shadow-soft hover:bg-neutral-100"
+              className="absolute top-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg font-bold text-neutral-900 shadow-soft hover:bg-neutral-100"
             >
               &times;
             </button>
 
-            {/* Prev */}
+            <div className="mt-4 flex items-center justify-center gap-3 sm:hidden">
+              <button
+                type="button"
+                onClick={() => setLightboxIndex((current) => (current !== null && current > 0 ? current - 1 : current))}
+                disabled={lightboxIndex === 0}
+                className="flex h-11 min-w-[88px] items-center justify-center rounded-full bg-white/90 px-4 text-lg font-bold text-neutral-900 shadow-soft disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                &lsaquo;
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  setLightboxIndex((current) =>
+                    current !== null && current < project.screenshots.length - 1 ? current + 1 : current,
+                  )
+                }
+                disabled={lightboxIndex === project.screenshots.length - 1}
+                className="flex h-11 min-w-[88px] items-center justify-center rounded-full bg-white/90 px-4 text-lg font-bold text-neutral-900 shadow-soft disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                &rsaquo;
+              </button>
+            </div>
+
             {lightboxIndex > 0 && (
               <button
                 type="button"
                 onClick={() => setLightboxIndex(lightboxIndex - 1)}
-                className="absolute top-1/2 -left-14 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg font-bold text-neutral-900 shadow-soft hover:bg-white"
+                className="absolute top-1/2 -left-14 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg font-bold text-neutral-900 shadow-soft hover:bg-white sm:flex"
               >
                 &lsaquo;
               </button>
             )}
 
-            {/* Next */}
             {lightboxIndex < project.screenshots.length - 1 && (
               <button
                 type="button"
                 onClick={() => setLightboxIndex(lightboxIndex + 1)}
-                className="absolute top-1/2 -right-14 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg font-bold text-neutral-900 shadow-soft hover:bg-white"
+                className="absolute top-1/2 -right-14 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg font-bold text-neutral-900 shadow-soft hover:bg-white sm:flex"
               >
                 &rsaquo;
               </button>

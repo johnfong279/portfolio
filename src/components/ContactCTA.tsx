@@ -7,10 +7,10 @@ function ContactCTA() {
       <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/75">
         Contact
       </p>
-      <h2 className="mt-4 font-heading text-4xl leading-tight md:text-6xl">
+      <h2 className="mt-4 font-heading text-3xl leading-tight sm:text-4xl md:text-6xl">
         {contactContent.headline}
       </h2>
-      <p className="mt-5 text-lg leading-8 text-white/85 md:text-xl">
+      <p className="mt-5 text-base leading-7 text-white/85 sm:text-lg sm:leading-8 md:text-xl">
         {contactContent.subheadline}
       </p>
       <div className="mt-8">
