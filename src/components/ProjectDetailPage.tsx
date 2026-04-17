@@ -78,12 +78,12 @@ function ProjectDetailPage() {
             </p>
           </div>
 
-          <div className="min-h-[220px] overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 shadow-soft sm:min-h-[280px]">
+          <div className="flex min-h-[220px] items-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 shadow-soft sm:min-h-[280px]">
             <img
               src={project.thumbnail}
               alt={`${project.name} overview`}
               className={`h-full w-full ${
-                usesContainedThumbnail ? 'bg-white p-3 object-contain sm:p-4' : 'object-cover object-top'
+                usesContainedThumbnail ? 'bg-white p-3 object-contain sm:p-4' : 'object-cover object-center'
               }`}
             />
           </div>
@@ -137,7 +137,11 @@ function ProjectDetailPage() {
                   <img
                     src={screenshot.src}
                     alt={screenshot.label}
-                    className="h-[260px] w-full bg-white p-3 object-contain transition-transform duration-300 group-hover:scale-[1.02] sm:h-[320px] sm:p-4"
+                    className={`h-[260px] w-full transition-transform duration-300 group-hover:scale-[1.02] sm:h-[320px] ${
+                      screenshot.fit === 'contain'
+                        ? 'bg-white p-3 object-contain sm:p-4'
+                        : 'object-cover object-top'
+                    }`}
                     loading="lazy"
                   />
                 </div>

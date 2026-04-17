@@ -21,14 +21,14 @@ function ProjectCard({ project, reverse = false }: ProjectCardProps) {
           reverse ? 'md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1' : ''
         }`}
       >
-        <div className="min-h-[220px] w-full overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 sm:min-h-[260px] md:min-h-[280px]">
+        <div className="flex min-h-[220px] w-full items-center overflow-hidden rounded-[1.5rem] border border-neutral-200 bg-neutral-100 sm:min-h-[260px] md:min-h-[280px]">
           <img
             src={project.thumbnail}
             alt={`${project.name} screenshot`}
             className={`h-full w-full transition-transform duration-300 group-hover:scale-[1.02] ${
               usesContainedThumbnail
                 ? 'bg-white p-3 object-contain sm:p-4'
-                : 'object-cover object-top'
+                : 'object-cover object-center'
             }`}
           />
         </div>

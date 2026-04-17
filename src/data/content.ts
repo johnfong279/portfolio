@@ -1,6 +1,7 @@
 export type Screenshot = {
   src: string
   label: string
+  fit?: 'cover' | 'contain'
 }
 
 export type Feature = {
@@ -138,12 +139,12 @@ export const projects: Project[] = [
       },
     ],
     screenshots: [
-      { src: '/food-label-translator/landing-page-full.png', label: 'Landing Page' },
-      { src: '/food-label-translator/demo-page-full.png', label: 'Demo Page' },
-      { src: '/food-label-translator/demo-step-1-source-label.png', label: 'Step 1 — Source Label Upload' },
-      { src: '/food-label-translator/demo-step-2-extracted-data.png', label: 'Step 2 — Extracted Data' },
-      { src: '/food-label-translator/demo-step-3-canadian-translation.png', label: 'Step 3 — Canadian Translation' },
-      { src: '/food-label-translator/demo-step-4-generated-output.png', label: 'Step 4 — Generated Output' },
+      { src: '/food-label-translator/landing-page-full.png', label: 'Landing Page', fit: 'contain' },
+      { src: '/food-label-translator/demo-page-full.png', label: 'Demo Page', fit: 'contain' },
+      { src: '/food-label-translator/demo-step-1-source-label.png', label: 'Step 1 — Source Label Upload', fit: 'contain' },
+      { src: '/food-label-translator/demo-step-2-extracted-data.png', label: 'Step 2 — Extracted Data', fit: 'contain' },
+      { src: '/food-label-translator/demo-step-3-canadian-translation.png', label: 'Step 3 — Canadian Translation', fit: 'contain' },
+      { src: '/food-label-translator/demo-step-4-generated-output.png', label: 'Step 4 — Generated Output', fit: 'contain' },
     ],
   },
   {
@@ -221,18 +222,18 @@ export const projects: Project[] = [
       },
     ],
     screenshots: [
-      { src: '/tennis-app/01-login.png', label: 'Login' },
-      { src: '/tennis-app/02-register-modal.png', label: 'Register' },
-      { src: '/tennis-app/03-user-calendar.png', label: 'User — Calendar' },
-      { src: '/tennis-app/04-user-add-booking.png', label: 'User — Add Booking' },
-      { src: '/tennis-app/05-user-my-bookings.png', label: 'User — My Bookings' },
-      { src: '/tennis-app/06-user-statistics.png', label: 'User — Statistics' },
-      { src: '/tennis-app/07-user-information.png', label: 'User — Information' },
-      { src: '/tennis-app/08-admin-booking-management.png', label: 'Admin — Booking Management' },
-      { src: '/tennis-app/09-admin-funding-add.png', label: 'Admin — Add Funding' },
-      { src: '/tennis-app/10-admin-funding-users.png', label: 'Admin — Funding Users' },
-      { src: '/tennis-app/11-admin-funding-history.png', label: 'Admin — Funding History' },
-      { src: '/tennis-app/12-admin-calendar.png', label: 'Admin — Calendar' },
+      { src: '/tennis-app/01-login.png', label: 'Login', fit: 'contain' },
+      { src: '/tennis-app/02-register-modal.png', label: 'Register', fit: 'contain' },
+      { src: '/tennis-app/03-user-calendar.png', label: 'User — Calendar', fit: 'contain' },
+      { src: '/tennis-app/04-user-add-booking.png', label: 'User — Add Booking', fit: 'contain' },
+      { src: '/tennis-app/05-user-my-bookings.png', label: 'User — My Bookings', fit: 'contain' },
+      { src: '/tennis-app/06-user-statistics.png', label: 'User — Statistics', fit: 'contain' },
+      { src: '/tennis-app/07-user-information.png', label: 'User — Information', fit: 'contain' },
+      { src: '/tennis-app/08-admin-booking-management.png', label: 'Admin — Booking Management', fit: 'contain' },
+      { src: '/tennis-app/09-admin-funding-add.png', label: 'Admin — Add Funding', fit: 'contain' },
+      { src: '/tennis-app/10-admin-funding-users.png', label: 'Admin — Funding Users', fit: 'contain' },
+      { src: '/tennis-app/11-admin-funding-history.png', label: 'Admin — Funding History', fit: 'contain' },
+      { src: '/tennis-app/12-admin-calendar.png', label: 'Admin — Calendar', fit: 'contain' },
     ],
   },
 ]
